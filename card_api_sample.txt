@@ -1,0 +1,47 @@
+1. Card (Model)
+{
+	card_id: 'integer',
+	name: 'string',
+	phone: 'numeric',
+	email: 'string',
+	relations: [ 'integer' ]
+}
+
+
+2. APIs
+	1) 명함 조회
+		path: /card/{:card_id}
+		method: GET
+		http status: 200, 404
+		response: Card
+		
+	2) 명함 리스트
+		path: /card
+		method: GET
+		query: name, phone, email
+		http status: 200, 404
+		response: [Card]
+
+	3) 명함 등록
+		path: /card
+		method: POST
+		body: Card
+		http status: 201, 400, 403
+
+	4) 명함 수정 
+		path: /card
+		method: PUT
+		body: Card
+		http status: 204, 400, 403 (이름은 수정 못함), 404
+
+	5) 관계자 추가
+		path: /card/{:card_id}/relation
+		method: POST
+		form: card_id
+		http status: 204, 400, 403
+
+	6) 명함 삭제
+		path: /card/{:card_id}
+		method: DELETE
+		http status: 204, 404
+
