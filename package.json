@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "express": "3.5.1",
-    "swagger-node-express": "^2.0.2",
     "cors": "^2.3.0",
-    "ejs": "^1.0.0"
+    "ejs": "^1.0.0",
+    "debug": "^2.2.0",
+    "swagger-node-express": "^2.1.3"
   }
 }
